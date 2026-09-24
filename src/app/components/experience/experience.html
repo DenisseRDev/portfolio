@@ -1,0 +1,98 @@
+<section
+  id="experience"
+  class="experience section"
+  appRevealOnScroll
+>
+  <div class="section-heading">
+    <p class="section-label">
+      {{ languageService.translation.experience.label }}
+    </p>
+    <h2>
+      {{ languageService.translation.experience.title }}
+    </h2>
+  </div>
+
+  <div class="timeline">
+    <!-- Experience item -->
+    <article class="timeline-item">
+      <div class="timeline-marker">
+        <span></span>
+      </div>
+      <div class="timeline-content">
+        <div class="experience-header">
+          <div>
+            <h3>
+              {{ languageService.translation.experience.experience1.position }}
+            </h3>
+            <p class="company">
+              Coppel
+            </p>
+          </div>
+          <span class="date">
+            {{ languageService.translation.experience.experience1.date }}
+          </span>
+        </div>
+        <ul class="experience-resposibilities">
+          @for (
+            item of languageService.translation.experience.experience1.description;
+            track item
+            ) {
+            <li>{{item}}</li>
+          }
+        </ul>
+        <!-- <div class="technology-list">
+          <span class="technology">
+            Angular
+          </span>
+          <span class="technology">
+            TypeScript
+          </span>
+          <span class="technology">
+            Java
+          </span>
+        </div> -->
+      </div>
+    </article>
+
+    <!-- Experience item -->
+    <article class="timeline-item">
+      <div class="timeline-marker">
+        <span></span>
+      </div>
+      <div class="timeline-content">
+        <div class="experience-header">
+          <div>
+            <h3>
+              {{ languageService.translation.experience.experience2.position }}
+            </h3>
+            <p class="company">
+              IHMTEK
+            </p>
+          </div>
+          <span class="date">
+            {{ languageService.translation.experience.experience2.date }}
+          </span>
+        </div>
+        <ul class="experience-resposibilities">
+          @for (
+            item of languageService.translation.experience.experience2.description;
+            track item
+            ) {
+            <li>{{item}}</li>
+          }
+        </ul>
+        <!-- <div class="technology-list">
+          <span class="technology">
+            JavaScript
+          </span>
+          <span class="technology">
+            Git
+          </span>
+          <span class="technology">
+            REST APIs
+          </span>
+        </div> -->
+      </div>
+    </article>
+  </div>
+</section>

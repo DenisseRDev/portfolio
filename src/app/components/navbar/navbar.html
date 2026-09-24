@@ -1,0 +1,81 @@
+<header class="navbar">
+
+  <a class="logo" href="#home" (click)="closeMenu()">
+    DR
+  </a>
+
+  <nav class="desktop-nav">
+    <a href="#home">
+      {{ languageService.translation.navbar.home }}
+    </a>
+    <a href="#about">
+      {{ languageService.translation.navbar.about }}
+    </a>
+    <a href="#skills">
+      {{ languageService.translation.navbar.skills }}
+    </a>
+    <a href="#experience">
+      {{ languageService.translation.navbar.experience }}
+    </a>
+    <a href="#education">
+      {{ languageService.translation.navbar.education }}
+    </a>
+    <!-- <a href="#projects">
+      {{ languageService.translation.navbar.projects }}
+    </a> -->
+    <a href="#contact">
+      {{ languageService.translation.navbar.contact }}
+    </a>
+  </nav>
+
+  <button
+    class="language-button"
+    (click)="toggleLanguage()"
+  >
+    {{ languageService.language() === 'en' ? 'ES' : 'EN' }}
+  </button>
+
+  <button
+    class="menu-button"
+    aria-label="Open navigation menu"
+    (click)="toggleMenu()"
+  >
+    {{ menuOpen ? 'x' : '☰' }}
+  </button>
+
+  @if (menuOpen) {
+    <nav class="mobile-nav">
+
+      <a href="#home" (click)="closeMenu()">
+        {{ languageService.translation.navbar.home }}
+      </a>
+      <a href="#about" (click)="closeMenu()">
+        {{ languageService.translation.navbar.about }}
+      </a>
+      <a href="#skills" (click)="closeMenu()">
+        {{ languageService.translation.navbar.skills }}
+      </a>
+      <a href="#experience" (click)="closeMenu()">
+        {{ languageService.translation.navbar.experience }}
+      </a>
+      <a href="#education" (click)="closeMenu()">
+        {{ languageService.translation.navbar.education }}
+      </a>
+      <!-- <a href="#projects" (click)="closeMenu()">
+        {{ languageService.translation.navbar.projects }}
+      </a> -->
+      <a href="#contact" (click)="closeMenu()">
+        {{ languageService.translation.navbar.contact }}
+      </a>
+
+      <button
+        class="mobile-language-button"
+        (click)="toggleLanguage()"
+      >
+        {{ languageService.language() === 'en' ? 'ES' : 'EN' }}
+      </button>
+
+    </nav>
+  }
+
+</header>

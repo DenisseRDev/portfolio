@@ -1,0 +1,61 @@
+<section
+  id="contact"
+  class="contact section"
+>
+
+  <div class="contact-content">
+
+    <p class="section-label">
+      {{ languageService.translation.contact.label }}
+    </p>
+
+    <h2>
+      {{ languageService.translation.contact.title }}
+    </h2>
+
+    <p class="contact-description">
+      {{ languageService.translation.contact.description }}
+    </p>
+
+
+    <div class="contact-links">
+
+      <a
+        [href]="profile.links.github"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+      >
+        <span>
+          {{ languageService.translation.contact.github }}
+        </span>
+        <span>→</span>
+      </a>
+
+      <a
+        [href]="profile.links.linkedin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+      >
+        <span>
+          {{ languageService.translation.contact.linkedin }}
+        </span>
+        <span>→</span>
+      </a>
+
+      <a
+        [href]="'mailto:' + profile.links.email"
+        class="contact-link"
+      >
+        <span>
+          {{ languageService.translation.contact.email }}
+        </span>
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
