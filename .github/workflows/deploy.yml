@@ -38,11 +38,22 @@ jobs:
             -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
             "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=sts.amazonaws.com")
 
-          token=$(echo "$token_response" | jq -r '.value')
+          python - <<'PY' "$token_response"
+          import sys
+          import json
+          import base64
 
-          payload=$(echo "$token" | cut -d '.' -f2 | base64 -d 2>/dev/null | jq -r '.sub')
+          response = json.loads(sys.argv[1])
+          token = response["value"]
 
-          echo "OIDC subject: $payload"
+          payload = token.split(".")[1]
+          payload += "=" * (-len(payload) % 4)
+
+          decoded = base64.urlsafe_b64decode(payload)
+          claims = json.loads(decoded)
+
+          print("OIDC subject:", claims["sub"])
+          PY
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
