@@ -104,7 +104,7 @@ export const en = {
     certification: {
       title: 'Fundamentos de AWS: Cloud, Serverless y Operación',
       issuer: 'Commit Academy',
-      date: 'Certificado',
+      date: 'Certificate',
     },
     languages: {
       title: 'Languages',
